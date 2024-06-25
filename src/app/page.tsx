@@ -5,6 +5,8 @@ import Popular from "./components/Popular";
 import Latest from "./components/Latest";
 import Single from "./components/Single";
 import EntertainmentBlock from "./components/EntertainmentBlock";
+import PoliticsBlock from "./components/PoliticsBlock";
+import SocietyBlock from "./components/SocietyBlock";
 
 export default function Home() {
   return (
@@ -14,7 +16,9 @@ export default function Home() {
       {/* <Homepage/> */}
       {/* <Latest/> */}
       {/* <Single /> */}
+      <SocietyBlock/>
       <EntertainmentBlock/>
+      <PoliticsBlock/>
     </>
   );
 }

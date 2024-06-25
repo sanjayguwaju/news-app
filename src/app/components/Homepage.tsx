@@ -1,8 +1,8 @@
 import * as React from "react";
 import Recent from "./Recent";
 import { PhotoFeature } from "./PhotoFeature";
-import NewsSection from "./NewsSection";
-import NewsSection1 from "./NewsSection1";
+import SocietyBlock from "./SocietyBlock";
+import PoliticsBlock from "./PoliticsBlock";
 import EntertainmentBlock from "./EntertainmentBlock";
 
 type ImageProps = {
@@ -109,8 +109,8 @@ const Homepage: React.FC = () => (
     />
     </main>
     <Recent/>
-    <NewsSection/>
-    <NewsSection1/>
+    <SocietyBlock/>
+    <PoliticsBlock/>
     <EntertainmentBlock/>
     <PhotoFeature />
     <div className="flex flex-col mt-5 w-full max-md:max-w-full">
