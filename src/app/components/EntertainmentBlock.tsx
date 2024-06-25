@@ -53,7 +53,7 @@ const EntertainmentBlock = () => {
           />
           <p className="text-lg font-semibold">{mainNews.description}</p>
         </div>
-        <div className="flex flex-col gap-4 w-[300px]">
+        <div className="flex flex-col gap-6 w-[400px] md:w-[340px]">
           {otherNews.map((news, index) => (
             <div key={index} className="flex items-start space-x-2 w-full">
               <img
@@ -65,7 +65,7 @@ const EntertainmentBlock = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-4 w-[300px]">
+        <div className="flex flex-col gap-4 w-[400px] md:w-[340px]">
           {otherNews.map((news, index) => (
             <div key={index} className="flex items-start space-x-2 w-full">
               <img
