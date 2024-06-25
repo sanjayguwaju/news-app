@@ -4,15 +4,17 @@ import Header from "./components/Header";
 import Popular from "./components/Popular";
 import Latest from "./components/Latest";
 import Single from "./components/Single";
+import EntertainmentBlock from "./components/EntertainmentBlock";
 
 export default function Home() {
   return (
     <>
       {/* <Popular/> */}
       {/* <Header/> */}
-      <Homepage/>
+      {/* <Homepage/> */}
       {/* <Latest/> */}
       {/* <Single /> */}
+      <EntertainmentBlock/>
     </>
   );
 }
