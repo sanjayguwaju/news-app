@@ -7,6 +7,7 @@ import Single from "./components/Single";
 import EntertainmentBlock from "./components/EntertainmentBlock";
 import PoliticsBlock from "./components/PoliticsBlock";
 import SocietyBlock from "./components/SocietyBlock";
+import { PhotoFeature } from "./components/PhotoFeature";
 
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
       {/* <Homepage/> */}
       {/* <Latest/> */}
       {/* <Single /> */}
-      <SocietyBlock/>
-      <EntertainmentBlock/>
-      <PoliticsBlock/>
+      {/* <SocietyBlock/> */}
+      {/* <EntertainmentBlock/> */}
+      {/* <PoliticsBlock/> */}
+      <PhotoFeature/>
     </>
   );
 }
