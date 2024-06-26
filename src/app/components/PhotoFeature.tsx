@@ -44,7 +44,7 @@ export const PhotoFeature = () => {
       <div className="flex flex-col justify-center items-center w-full text-white bg-black bg-opacity-80 max-md:px-5 max-md:max-w-full">
         <div className="flex flex-col w-[1130px] max-w-full">
           <h2 className="self-center px-16 py-0.5 text-3xl font-bold border-b border-solid border-stone-300 max-md:px-5 max-md:max-w-full">
-          फोटो फिचर
+            फोटो फिचर
           </h2>
           <div className="flex gap-5 items-start mt-9 mb-9 text-xl font-semibold leading-7 max-md:flex-wrap">
             {newsItems.map((item, index) => (

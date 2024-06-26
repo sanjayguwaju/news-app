@@ -8,6 +8,7 @@ import EntertainmentBlock from "./components/EntertainmentBlock";
 import PoliticsBlock from "./components/PoliticsBlock";
 import SocietyBlock from "./components/SocietyBlock";
 import { PhotoFeature } from "./components/PhotoFeature";
+import HeadingBlock from "./components/HeadingBlock";
 
 export default function Home() {
   return (
@@ -15,12 +16,13 @@ export default function Home() {
       {/* <Popular/> */}
       {/* <Header/> */}
       {/* <Homepage/> */}
+      <HeadingBlock />
       {/* <Latest/> */}
       {/* <Single /> */}
       {/* <SocietyBlock/> */}
       {/* <EntertainmentBlock/> */}
       {/* <PoliticsBlock/> */}
-      <PhotoFeature/>
+      {/* <PhotoFeature/> */}
     </>
   );
 }

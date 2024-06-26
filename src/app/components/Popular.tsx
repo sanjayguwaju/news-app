@@ -7,7 +7,8 @@ interface Article {
 
 const Popular: React.FC = () => {
   const mainArticle = {
-    imageSrc: "https://res.cloudinary.com/dz3facqgc/image/upload/v1718634303/gzlpfs5ati2dobcwajbt.jpg",
+    imageSrc:
+      "https://res.cloudinary.com/dz3facqgc/image/upload/v1718634303/gzlpfs5ati2dobcwajbt.jpg",
     title: "टी-२० अन्तर्राष्ट्रियमा सन्दीपको एक सयौं विकेट पूरा",
     authorImageSrc: "https://placehold.co/40x40",
     authorName: "पंकज कुमार",

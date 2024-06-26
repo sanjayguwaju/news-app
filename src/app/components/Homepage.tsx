@@ -53,8 +53,6 @@ const newsItems = [
   },
 ];
 
-
-
 type ColumnProps = {
   children: React.ReactNode;
 };
@@ -67,7 +65,7 @@ const Column: React.FC<ColumnProps> = ({ children }) => (
 
 const Homepage: React.FC = () => (
   <div className="flex flex-col pt-6 bg-white">
-    <main className="flex flex-col items-center">
+    {/* <main className="flex flex-col items-center">
       <Image
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/135c8651cb6c8f0abc072fb5db42e98e0922d02bf57d3e612c2de7d49d8caac4?apiKey=364294d949e44cc6a45273c421c40ca2&"
         className="mt-8 max-w-full aspect-[8.33] w-[1130px]"
@@ -107,11 +105,11 @@ const Homepage: React.FC = () => (
       className="mt-5 max-w-full aspect-[1.49] w-[1100px]"
       alt="News image"
     />
-    </main>
-    <Recent/>
-    <SocietyBlock/>
-    <PoliticsBlock/>
-    <EntertainmentBlock/>
+    </main> */}
+    <Recent />
+    <SocietyBlock />
+    <PoliticsBlock />
+    <EntertainmentBlock />
     <PhotoFeature />
     <div className="flex flex-col mt-5 w-full max-md:max-w-full">
       <footer className="flex justify-center items-center px-16 py-7 w-full text-3xl font-bold leading-6 text-white bg-neutral-900 max-md:px-5 max-md:max-w-full">

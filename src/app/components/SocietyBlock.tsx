@@ -48,7 +48,9 @@ const SocietyBlock = () => {
         <h2 className="font-bold text-2xl sm:text-xl">समाज</h2>
       </div>
       <div>
-        <p className="text-black text-left my-2 text-2xl sm:text-base">{mainNews.title}</p>
+        <p className="text-black text-left my-2 text-2xl sm:text-base">
+          {mainNews.title}
+        </p>
       </div>
       <div className="flex flex-wrap gap-4 md:flex-nowrap">
         <div className="w-full md:w-2/3">
@@ -68,13 +70,15 @@ const SocietyBlock = () => {
         <div className="flex flex-col gap-4 w-[400px] md:w-[340px]">
           <div className="space-y-4">
             {sidebarNews.map((news, index) => (
-                <div key={index} className="flex items-start space-x-2 w-full">
+              <div key={index} className="flex items-start space-x-2 w-full">
                 <img
                   src={news?.imgSrc}
                   alt={news?.imgAlt}
                   className="w-20 h-20 object-cover"
                 />
-                <p className="text-black text-justify my-2 text-xl sm:text-base">{news?.description}</p>
+                <p className="text-black text-justify my-2 text-xl sm:text-base">
+                  {news?.description}
+                </p>
               </div>
             ))}
           </div>

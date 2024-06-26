@@ -15,7 +15,7 @@ const config: Config = {
       },
       width: {
         custom: "1330px",
-      }
+      },
     },
   },
   plugins: [],
