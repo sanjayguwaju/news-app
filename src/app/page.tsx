@@ -9,6 +9,7 @@ import PoliticsBlock from "./components/PoliticsBlock";
 import SocietyBlock from "./components/SocietyBlock";
 import { PhotoFeature } from "./components/PhotoFeature";
 import HeadingBlock from "./components/HeadingBlock";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
       {/* <Popular/> */}
       {/* <Header/> */}
       {/* <Homepage/> */}
-      <HeadingBlock />
+      {/* <HeadingBlock /> */}
+      <Footer/>
       {/* <Latest/> */}
       {/* <Single /> */}
       {/* <SocietyBlock/> */}
