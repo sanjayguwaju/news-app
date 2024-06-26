@@ -17,14 +17,14 @@ export default function Home() {
       {/* <Popular/> */}
       {/* <Header/> */}
       {/* <Homepage/> */}
-      {/* <HeadingBlock /> */}
-      <Footer/>
+      <HeadingBlock />
       {/* <Latest/> */}
       {/* <Single /> */}
-      {/* <SocietyBlock/> */}
-      {/* <EntertainmentBlock/> */}
-      {/* <PoliticsBlock/> */}
-      {/* <PhotoFeature/> */}
+      <SocietyBlock />
+      <EntertainmentBlock />
+      <PoliticsBlock />
+      <PhotoFeature />
+      <Footer />
     </>
   );
 }
