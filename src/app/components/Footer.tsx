@@ -8,8 +8,8 @@ const footerData = {
         { name: "हाम्रो बारेमा", url: "#" },
         { name: "करियर", url: "#" },
         { name: "ब्राण्ड केन्द्र", url: "#" },
-        { name: "ब्लग", url: "#" }
-      ]
+        { name: "ब्लग", url: "#" },
+      ],
     },
     {
       title: "सहयोग केन्द्र",
@@ -17,16 +17,16 @@ const footerData = {
         { name: "डिस्कोर्ड सर्भर", url: "#" },
         { name: "ट्विटर", url: "#" },
         { name: "फेसबुक", url: "#" },
-        { name: "सम्पर्क गर्नुहोस्", url: "#" }
-      ]
+        { name: "सम्पर्क गर्नुहोस्", url: "#" },
+      ],
     },
     {
       title: "कानुनी",
       links: [
         { name: "गोपनीयता नीति", url: "#" },
         { name: "लाइसेन्सिङ", url: "#" },
-        { name: "नियम र सर्तहरू", url: "#" }
-      ]
+        { name: "नियम र सर्तहरू", url: "#" },
+      ],
     },
     {
       title: "डाउनलोड",
@@ -34,10 +34,10 @@ const footerData = {
         { name: "म्याकओएस", url: "#" },
         { name: "एन्ड्रोइड", url: "#" },
         { name: "विन्डोज", url: "#" },
-        { name: "म्याकओएस", url: "#" }
-      ]
-    }
-  ]
+        { name: "म्याकओएस", url: "#" },
+      ],
+    },
+  ],
 };
 
 const Footer: React.FC = () => (
@@ -63,7 +63,7 @@ const Footer: React.FC = () => (
       </div>
       <div className="px-4 py-6 bg-red-400 md:flex md:items-center md:justify-between">
         <span className="text-xl text-white sm:text-center">
-        © 2024: NewsAone मा सर्वाधिक सुरक्षित छ
+          © 2024: NewsAone मा सर्वाधिक सुरक्षित छ
         </span>
         <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
           {/* Social icons would be rendered similarly, potentially with a different data structure if needed */}

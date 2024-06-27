@@ -47,7 +47,7 @@ const Popular: React.FC = () => {
               <img
                 src={mainArticle.imageSrc}
                 alt="Main article image"
-                className="rounded-lg w-full"
+                className="w-full"
               />
             </div>
             <div className="md:w-1/2">
@@ -56,16 +56,16 @@ const Popular: React.FC = () => {
                 <img
                   src={mainArticle.authorImageSrc}
                   alt="Author image"
-                  className="rounded-full w-10 h-10 mr-2"
+                  className="w-10 h-10 mr-2"
                 />
                 <div>
                   <p className="text-sm font-semibold">
                     {mainArticle.authorName}
                   </p>
-                  <p className="text-xs text-zinc-500">{mainArticle.date}</p>
+                  <p className="text-lg text-zinc-500">{mainArticle.date}</p>
                 </div>
               </div>
-              <p className="text-zinc-700 mb-4">{mainArticle.description}</p>
+              <p className=" text-lg text-zinc-700 mb-4">{mainArticle.description}</p>
               <a href={mainArticle.link} className="text-blue-600">
                 थप पढ्नुहोस्
               </a>
@@ -77,9 +77,9 @@ const Popular: React.FC = () => {
                 <img
                   src={article.imageSrc}
                   alt={`Article image ${index + 1}`}
-                  className="rounded-lg w-full"
+                  className="w-full"
                 />
-                <p className="mt-2 text-zinc-800">{article.title}</p>
+                <p className="mt-2 text-lg text-zinc-800">{article.title}</p>
               </div>
             ))}
           </div>

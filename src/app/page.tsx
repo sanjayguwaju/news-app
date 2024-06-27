@@ -10,22 +10,26 @@ import SocietyBlock from "./components/SocietyBlock";
 import { PhotoFeature } from "./components/PhotoFeature";
 import HeadingBlock from "./components/HeadingBlock";
 import Footer from "./components/Footer";
+import FavouriteSection from "./components/FavouriteSection";
+import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
-      {/* <Popular/> */}
-      {/* <Header/> */}
+      <Header/>
       {/* <Homepage/> */}
-      {/* <HeadingBlock /> */}
-      {/* <Latest/> */}
+      <Navbar/>
+      <HeadingBlock />
+      <Latest/>
+      {/* <Popular/> */}
       {/* <Single /> */}
-      {/* <SocietyBlock /> */}
-      {/* <EntertainmentBlock /> */}
-      {/* <PoliticsBlock /> */}
-      {/* <PhotoFeature /> */}
-      {/* <Footer /> */}
-      <Single/>
+      <SocietyBlock />
+      <EntertainmentBlock />
+      <PoliticsBlock />
+      <PhotoFeature />
+      <Footer />
+      {/* <Single /> */}
     </>
   );
 }

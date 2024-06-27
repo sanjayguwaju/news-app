@@ -7,18 +7,18 @@ const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
 );
 
 const ArticleWithHeaderOne: React.FC<{
-    text: string;
-    subText: string;
-    children: React.ReactNode;
-  }> = ({ text, subText, children }) => (
-    <article className="flex flex-col self-start mt-5">
-      {children}
-      <div className="flex gap-3 px-5 mt-1.5">
-        <div className="grow text-zinc-800">{text}</div>
-        <div className="flex-auto text-black leading-[200%]">{subText}</div>
-      </div>
-    </article>
-  );
+  text: string;
+  subText: string;
+  children: React.ReactNode;
+}> = ({ text, subText, children }) => (
+  <article className="flex flex-col self-start mt-5">
+    {children}
+    <div className="flex gap-3 px-5 mt-1.5">
+      <div className="grow text-zinc-800">{text}</div>
+      <div className="flex-auto text-black leading-[200%]">{subText}</div>
+    </div>
+  </article>
+);
 
 const ArticleWithHeaderNew = () => {
   return (

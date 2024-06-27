@@ -1,4 +1,5 @@
 import ArticleWithHeaderNew from "./ArticleWithHeader";
+import FavouriteSection from "./FavouriteSection";
 import Navbar from "./Navbar";
 
 type ImageProps = { src: string; alt: string; className: string };
@@ -76,55 +77,11 @@ const Sidebar: React.FC = () => (
 
 const HeaderWithText: React.FC<{ text: string }> = ({ text }) => (
   <div className="w-full h-full flex items-center justify-center p-2 bg-red-600 mb-2">
-    <div className="text-center text-white">
-      {text}
-    </div>
+    <div className="text-center text-white">{text}</div>
   </div>
 );
 
-const CompanyInfo: React.FC = () => (
-  <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-    <div className="flex flex-col text-lg leading-6 text-white max-md:mt-8">
-      <Image
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/59ac4d162697f43e8bc0c47df0a23bf14e25b968791e11bc849492fb0d8a38b7?apiKey=364294d949e44cc6a45273c421c40ca2&"
-        alt=""
-        className="self-center aspect-[6.25] w-[260px]"
-      />
-      <div className="mt-6">
-        एस. जि. मिडिया ग्रुप प्रा. लि द्वारा संचालित <br /> News A-1 डटकम अनलाइन{" "}
-        <br /> Maharajganj, Kathmandu, Nepal
-        <br /> Contact Number: ९८०३८३०९२२ <br /> Email: newsaone2022@gmail.com
-      </div>
-      <div className="mt-5">
-        Company Registration No.: २७५८०६/०७८०७९ <br /> Press Council
-        Registration No.: ३७३४-२०७९/८० <br /> सूचना विभाग Registration No.:
-        ३७३७-२०७९/८० <br /> रेजस्टिक्स Department Registration No.: ६१०१३४६५८
-      </div>
-    </div>
-  </div>
-);
 
-const Team: React.FC = () => (
-  <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-    <div className="flex flex-col grow font-bold text-white max-md:mt-8">
-      <div className="pb-2 text-2xl leading-7 border-b border-solid border-stone-300">
-        हाम्रो टीम:
-      </div>
-      <div className="mt-7 text-lg leading-6">
-        Managing Director: <span> सनोज कुमार यादव </span> <br /> प्रधान सम्पादक{" "}
-        <span> गणेश कुमार मण्डल </span> <br />
-        Correspondents: <br /> <span>चन्दन रजक (Saptari)</span> <br />{" "}
-        <span>राजन कुमार यादव (Mahottari)</span> <br />
-        <span>कुमार पंकज (JanakpurDham)</span> <br />{" "}
-        <span>अशोक कुमार महतो शुरी (Dhanusha)</span> <br />
-        <span>पूजा कुमारी (Dhanusha)</span> <br />{" "}
-        <span>बिरेन्द्र कुमार यादव (Sarlahi)</span> <br />
-        <span>गणेश मण्डल (Kathmandu)</span> <br />{" "}
-        <span>अशोक राउत (Sarlahi)</span>
-      </div>
-    </div>
-  </div>
-);
 
 const Single: React.FC = () => {
   return (
@@ -138,6 +95,7 @@ const Single: React.FC = () => {
               <LargeSection />
               <aside className="flex flex-col ml-5 w-[23%] max-md:ml-0 max-md:w-full">
                 <Sidebar />
+                <FavouriteSection/>
               </aside>
             </main>
           </section>
