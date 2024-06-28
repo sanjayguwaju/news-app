@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaHome, FaBars } from 'react-icons/fa';
 import MobileNav from './MobileNav';
+import Dropdown from './Dropdown';
 
 type ImageProps = { src: string; alt: string; className: string };
 
@@ -19,6 +20,7 @@ const NavigationBar: React.FC = () => (
     <NavItem text="राजनीत" />
     <NavItem text="प्रदेश" />
     <NavItem text="राष्ट्रिय" />
+    <Dropdown text="समाचार"/>
     <NavItem text="विचार" />
     <NavItem text="मनोरञ्जन" />
     <NavItem text="खेलकुद" />

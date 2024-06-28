@@ -14,6 +14,7 @@ import FavouriteSection from "./components/FavouriteSection";
 import Nav from "./components/Nav";
 import Navbar from "./components/Navbar";
 import MobileNav from "./components/MobileNav";
+import Dropdown from "./components/Dropdown";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       {/* <Footer /> */}
       {/* <Single /> */}
       {/* <MobileNav/> */}
+      <Dropdown/>
     </>
   );
 }
