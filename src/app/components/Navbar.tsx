@@ -41,6 +41,7 @@ const Navbar = () => {
   // Close navbar if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      console.log("navbarRef --->", navbarRef);
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         setIsSidebarOpen(false);
       }
@@ -64,13 +65,22 @@ const Navbar = () => {
         </div>
 
         {/* Hamburger Icon for Mobile */}
-        <div className="md:hidden ml-auto" onClick={toggleSidebar}>
-          <FaBars />
-        </div>
+        <nav className="flex justify-between items-center px-4 w-full text-lg leading-6 text-white bg-red-600 shadow-sm md:hidden">
+          {/* Logo on the left */}>
+          <div className="flex items-center">
+            <img src="/path-to-your-logo.png" alt="Logo" className="h-8 w-auto" />
+            {/* Add your logo image here */}
+          </div>
+
+          {/* Hamburger icon on the right */}
+          <div className="flex justify-center items-center h-10 md:hidden ml-auto" onClick={toggleSidebar}>
+            <FaBars size={30}/>
+          </div>
+        </nav>
 
         {/* Mobile Sidebar */}
         {isSidebarOpen && (
-          <div ref={navbarRef} className="absolute top-0 left-0 h-full w-full shadow-md flex flex-col md:hidden">
+          <div ref={navbarRef}>
             <MobileNav />
           </div>
         )}
