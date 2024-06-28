@@ -13,23 +13,25 @@ import Footer from "./components/Footer";
 import FavouriteSection from "./components/FavouriteSection";
 import Nav from "./components/Nav";
 import Navbar from "./components/Navbar";
+import MobileNav from "./components/MobileNav";
 
 export default function Home() {
   return (
     <>
-      <Header/>
+      {/* <Header/> */}
       {/* <Homepage/> */}
       <Navbar/>
-      <HeadingBlock />
-      <Latest/>
+      {/* <HeadingBlock /> */}
+      {/* <Latest/> */}
       {/* <Popular/> */}
       {/* <Single /> */}
-      <SocietyBlock />
-      <EntertainmentBlock />
-      <PoliticsBlock />
-      <PhotoFeature />
-      <Footer />
+      {/* <SocietyBlock /> */}
+      {/* <EntertainmentBlock /> */}
+      {/* <PoliticsBlock /> */}
+      {/* <PhotoFeature /> */}
+      {/* <Footer /> */}
       {/* <Single /> */}
+      {/* <MobileNav/> */}
     </>
   );
 }

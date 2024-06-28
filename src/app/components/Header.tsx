@@ -91,9 +91,9 @@ const Header = () => {
               className="self-center aspect-[5.88] w-[260px]"
               alt="Logo"
             />
-            <div className="flex gap-3 mt-1.5">
-              <p className="grow text-zinc-800">३ आषाढ २०८१, सोमवार</p>
-              <p className="flex-auto text-black leading-[200%]">
+            <div className="flex gap-2 mt-1.5">
+              <p className=" text-black leading-[200%]">३ आषाढ २०८१, सोमवार</p>
+              <p className=" text-black leading-[200%]">
                 सत्य समाचार सत्य विचार
               </p>
             </div>

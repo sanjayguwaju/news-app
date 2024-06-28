@@ -1,3 +1,8 @@
+"use client";
+import React, { useState, useRef, useEffect } from 'react';
+import { FaHome, FaBars } from 'react-icons/fa';
+import MobileNav from './MobileNav';
+
 type ImageProps = { src: string; alt: string; className: string };
 
 const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
@@ -6,11 +11,9 @@ const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
 
 const NavigationBar: React.FC = () => (
   <div className="flex gap-0 justify-center pr-20 pl-10 max-w-full bg-red-600 w-[1130px] max-md:flex-wrap max-md:px-5">
-    <Image
-      src="https://cdn.builder.io/api/v1/image/assets/TEMP/17cfa086c23e349d5ad8911af71f05837c6a5b683f5684748b94976e656861e3?apiKey=364294d949e44cc6a45273c421c40ca2&"
-      alt=""
-      className="shrink-0 border-r border-solid aspect-[1.14] border-blue-800 border-opacity-30 w-[52px]"
-    />
+    <div className="shrink-0 border-r border-solid aspect-[1.14] border-blue-800 border-opacity-30 w-[52px] flex justify-center items-center">
+      <FaHome />
+    </div>
     <NavItem text="समाचार" />
     <NavItem text="समाज" />
     <NavItem text="राजनीत" />
@@ -30,10 +33,47 @@ const NavItem: React.FC<{ text: string }> = ({ text }) => (
 );
 
 const Navbar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navbarRef = useRef(null); // Create a ref for the navbar
+
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  // Close navbar if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    // Add click event listener
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup the event listener
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [navbarRef]);
+
   return (
     <>
-      <nav className="flex justify-center items-center self-stretch px-16 mt-6 w-full text-lg leading-6 text-white whitespace-nowrap bg-red-600 shadow-sm max-md:px-5 max-md:max-w-full">
-        <NavigationBar />
+      <nav className="flex justify-between items-center px-16 w-full text-lg leading-6 text-white bg-red-600 shadow-sm max-md:px-5 max-md:max-w-full">
+        {/* Desktop Navigation Bar */}
+        <div className="hidden md:flex justify-center items-center w-full">
+          <NavigationBar />
+        </div>
+
+        {/* Hamburger Icon for Mobile */}
+        <div className="md:hidden ml-auto" onClick={toggleSidebar}>
+          <FaBars />
+        </div>
+
+        {/* Mobile Sidebar */}
+        {isSidebarOpen && (
+          <div ref={navbarRef} className="absolute top-0 left-0 h-full w-full shadow-md flex flex-col md:hidden">
+            <MobileNav />
+          </div>
+        )}
       </nav>
     </>
   );
