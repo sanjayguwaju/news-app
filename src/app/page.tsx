@@ -21,8 +21,7 @@ export default function Home() {
     <>
       {/* <Header/> */}
       {/* <Homepage/> */}
-      <Navbar />
-      {/* <HeadingBlock /> */}
+      <HeadingBlock />
       {/* <Latest/> */}
       {/* <Popular/> */}
       {/* <Single /> */}
@@ -33,7 +32,7 @@ export default function Home() {
       {/* <Footer /> */}
       {/* <Single /> */}
       {/* <MobileNav/> */}
-      <Dropdown />
+      {/* <Dropdown /> */}
     </>
   );
 }
