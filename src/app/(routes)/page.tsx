@@ -1,6 +1,6 @@
-import ArticleWithHeaderNew from "./ArticleWithHeader";
-import FavouriteSection from "./FavouriteSection";
-import Navbar from "./Navbar";
+import ArticleWithHeaderNew from "../components/article-with-header";
+import FavouriteSection from "../components/favourite-section";
+import Navbar from "../components/navbar";
 
 type ImageProps = { src: string; alt: string; className: string };
 

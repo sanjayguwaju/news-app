@@ -1,9 +1,9 @@
 import * as React from "react";
-import Recent from "./Recent";
-import { PhotoFeature } from "./PhotoFeature";
-import SocietyBlock from "./SocietyBlock";
-import PoliticsBlock from "./PoliticsBlock";
-import EntertainmentBlock from "./EntertainmentBlock";
+import Recent from "./recent";
+import { PhotoFeature } from "./photo-features";
+import SocietyBlock from "./society-block";
+import PoliticsBlock from "./politics-block";
+import EntertainmentBlock from "./entertainment-block";
 
 type ImageProps = {
   src: string;

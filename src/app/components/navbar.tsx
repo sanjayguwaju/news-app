@@ -1,8 +1,8 @@
 "use client";
 import { useState, useRef, useEffect } from 'react';
 import { FaHome, FaBars } from 'react-icons/fa';
-import MobileNav from './MobileNav';
-import Dropdown from './Dropdown';
+import MobileNav from './mobile-nav';
+import Dropdown from './dropdown';
 
 type ImageProps = { src: string; alt: string; className: string };
 
