@@ -113,7 +113,9 @@ const Latest: React.FC = () => {
                     className="w-24 h-24 object-cover"
                   />
                   <div>
-                    <h3 className="font-bold text-black text-justify my-2 text-xl">{article.title}</h3>
+                    <h3 className="font-bold text-black text-justify my-2 text-xl">
+                      {article.title}
+                    </h3>
                   </div>
                 </div>
               ))}
@@ -130,7 +132,9 @@ const Latest: React.FC = () => {
                     className="w-24 h-24 object-cover"
                   />
                   <div>
-                    <h3 className="font-bold text-black text-justify my-2 text-xl">{article.title}</h3>
+                    <h3 className="font-bold text-black text-justify my-2 text-xl">
+                      {article.title}
+                    </h3>
                   </div>
                 </div>
               ))}

@@ -65,7 +65,9 @@ const Popular: React.FC = () => {
                   <p className="text-lg text-zinc-500">{mainArticle.date}</p>
                 </div>
               </div>
-              <p className=" text-lg text-zinc-700 mb-4">{mainArticle.description}</p>
+              <p className=" text-lg text-zinc-700 mb-4">
+                {mainArticle.description}
+              </p>
               <a href={mainArticle.link} className="text-blue-600">
                 थप पढ्नुहोस्
               </a>

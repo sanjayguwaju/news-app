@@ -81,8 +81,6 @@ const HeaderWithText: React.FC<{ text: string }> = ({ text }) => (
   </div>
 );
 
-
-
 const Single: React.FC = () => {
   return (
     <>
@@ -95,7 +93,7 @@ const Single: React.FC = () => {
               <LargeSection />
               <aside className="flex flex-col ml-5 w-[23%] max-md:ml-0 max-md:w-full">
                 <Sidebar />
-                <FavouriteSection/>
+                <FavouriteSection />
               </aside>
             </main>
           </section>

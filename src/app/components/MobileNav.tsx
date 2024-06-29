@@ -12,7 +12,7 @@ const navItems = [
   { label: "स्वास्थ्य", key: "health" },
   { label: "विज्ञान प्रविधि", key: "technology" },
   { label: "खेलकुद", key: "sports" },
-  { label: "मनोरञ्जन", key: "entertainment" }
+  { label: "मनोरञ्जन", key: "entertainment" },
 ];
 
 const MobileNav = () => {

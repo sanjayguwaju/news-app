@@ -58,7 +58,7 @@ type ColumnProps = {
 };
 
 const Column: React.FC<ColumnProps> = ({ children }) => (
-  <div className="flex flex-col w-[32%] px-4 pb-8 mx-auto text-lg font-medium bg-neutral-100 max-md:mt-4 max-md:w-full max-md:max-w-full">
+  <div className="flex flex-col w-[32%] px-4  mx-auto text-lg font-medium bg-neutral-100 pb-8 max-md:mt-4 max-md:w-full max-md:max-w-full">
     {children}
   </div>
 );
