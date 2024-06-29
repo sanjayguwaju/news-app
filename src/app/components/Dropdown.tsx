@@ -24,9 +24,10 @@ const Dropdown = ({ text }) => {
         className="md:flex justify-center items-center p-4 border-r border-solid border-blue-800 border-opacity-30 hidden"
       >
         {text}
-        <div className="ml-2 md:block hidden">
-          <FaAngleDown />
+        <div className="ml-3 w-4 h-4 md:block hidden">
+          <img src="https://res.cloudinary.com/dz3facqgc/image/upload/v1719640376/wkvy1ypzmhfjksjhemiw.png"/>
         </div>
+        
       </div>
 
       {isOpen && (

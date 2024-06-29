@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaHome, FaBars } from 'react-icons/fa';
 import MobileNav from './MobileNav';
 import Dropdown from './Dropdown';
@@ -17,7 +17,7 @@ const NavigationBar: React.FC = () => (
     </div>
     <NavItem text="समाचार" />
     <NavItem text="समाज" />
-    <NavItem text="राजनीत" />
+    <Dropdown text="राजनीत" />
     <NavItem text="प्रदेश" />
     <NavItem text="राष्ट्रिय" />
     <Dropdown text="समाचार"/>
@@ -43,7 +43,6 @@ const Navbar = () => {
   // Close navbar if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log("navbarRef --->", navbarRef);
       if (navbarRef.current && !navbarRef.current.contains(event.target)) {
         setIsSidebarOpen(false);
       }
@@ -68,7 +67,7 @@ const Navbar = () => {
 
         {/* Hamburger Icon for Mobile */}
         <nav className="flex justify-between items-center px-4 w-full text-lg leading-6 text-white bg-red-600 shadow-sm md:hidden">
-          {/* Logo on the left */}>
+          {/* Logo on the left */}
           <div className="flex items-center">
             <img src="/path-to-your-logo.png" alt="Logo" className="h-8 w-auto" />
             {/* Add your logo image here */}
