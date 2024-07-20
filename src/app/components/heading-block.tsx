@@ -1,5 +1,5 @@
+"use client";
 import React from "react";
-import { axiosInstance } from "../libs";
 
 type ImageProps = {
   src: string;
@@ -39,31 +39,7 @@ const newsItems: NewsItem[] = [
   // Add more items as needed
 ];
 
-export default async function HeadingBlock() {
-
-  const res = await axiosInstance()
-    .get(`/articles`)
-    .then((res) => res?.data);
-
-  const headingBlockItems = res?.docs;
-  console.log("headingBlockItems -->", JSON.stringify(headingBlockItems));
-
-
-  const newsItems = headingBlockItems.map(item => ({
-    imgSrc: item.images[0].image.url,
-    title: item.title,
-    author: item.author.username,
-    date: new Date(item.publishedDate).toLocaleDateString('ne-NP', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      weekday: 'long',
-      hour: '2-digit',
-      minute: '2-digit'
-    }).replace(/,/g, ''),
-    comments: 0 
-  }));
-
+const HeadingBlock: React.FC = () => {
   return (
     <main>
       {newsItems.map((item, index) => (
@@ -107,3 +83,5 @@ export default async function HeadingBlock() {
     </main>
   );
 };
+
+export default HeadingBlock;
