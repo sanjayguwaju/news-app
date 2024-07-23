@@ -1,0 +1,28 @@
+/* style.css */
+.custom-class {
+  @apply p-4 bg-gray-100 rounded-md;
+}
+
+.custom-class p {
+  @apply mb-4 text-gray-700;
+}
+
+.custom-class h1, .custom-class h2, .custom-class h3, .custom-class h4, .custom-class h5, .custom-class h6 {
+  @apply font-bold mb-2;
+}
+
+.custom-class ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.custom-class ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.custom-class li {
+  @apply mb-2;
+}
+
+.custom-class img {
+  @apply max-w-full h-auto rounded-md shadow-md;
+}

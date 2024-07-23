@@ -16,8 +16,20 @@ const config: Config = {
       width: {
         custom: "1330px",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              color: theme('colors.gray.900'),
+              fontWeight: theme('fontWeight.bold'),
+              fontSize: theme('fontSize.4xl'),
+              marginBottom: theme('spacing.4'),
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [ require('@tailwindcss/typography'),],
 };
 export default config;

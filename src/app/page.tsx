@@ -15,22 +15,24 @@ import Nav from "./components/nav";
 import Navbar from "./components/navbar";
 import MobileNav from "./components/mobile-nav";
 import Dropdown from "./components/dropdown";
+import ShowRichText from "./components/ShowRichText";
 
 export default function Home() {
   return (
     <>
-      <Header/>
-      <Navbar/>
+      {/* <Header/>
+      <Navbar/> */}
       {/* <Homepage/> */}
+      {/* <ShowRichText/> */}
       <HeadingBlock />
       <Latest/>
-      {/* <Popular/> */}
+      <Popular/>
       {/* <Single /> */}
-      <SocietyBlock />
+      {/* <SocietyBlock />
       <EntertainmentBlock />
       <PoliticsBlock />
       <PhotoFeature />
-      <Footer />
+      <Footer /> */}
       {/* <Single /> */}
       {/* <MobileNav/> */}
       {/* <Dropdown /> */}

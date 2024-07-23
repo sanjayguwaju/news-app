@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    .prose h1 {
+      @apply text-gray-900 font-bold text-4xl mb-4;
+    }
+  }
