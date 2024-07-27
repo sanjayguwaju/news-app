@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Homepage from "./components/homepage";
 import Header from "./components/header";
@@ -16,8 +18,26 @@ import Navbar from "./components/navbar";
 import MobileNav from "./components/mobile-nav";
 import Dropdown from "./components/dropdown";
 import ShowRichText from "./components/ShowRichText";
+import { useEffect, useState } from "react";
+import axiosInstance from "./utils/axiosInstance";
+import { fetchHomepageLayout } from "./content/queries1";
 
 export default function Home() {
+  const [homepageLayout, setHomepageLayout] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchHomepageLayout();
+        console.log("data ---->", data);
+      } catch (err) {
+        console.error("Error fetching homepage layout", err);
+      }
+    };
+
+    fetchData();
+  }, []);
+  console.log("homepageLayout", homepageLayout);
   return (
     <>
       {/* <Header/>
@@ -25,8 +45,8 @@ export default function Home() {
       {/* <Homepage/> */}
       {/* <ShowRichText/> */}
       <HeadingBlock />
-      <Latest/>
-      <Popular/>
+      {/* <Latest/> */}
+      {/* <Popular/> */}
       {/* <Single /> */}
       {/* <SocietyBlock />
       <EntertainmentBlock />

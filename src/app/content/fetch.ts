@@ -12,16 +12,12 @@ export const contentGQLQuery = async <T>({
   revalidate?: number
 }): Promise<T | undefined> => {
   const res = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    `https://your-payload-cms-url.com/api/graphql`, // Update with your Payload CMS URL
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
-        }`,
+        Authorization: `Bearer ${process.env.PAYLOAD_CMS_ACCESS_TOKEN}`, // Update with your Payload CMS access token
       },
       body: JSON.stringify({ query, variables }),
       next: { tags, ...{ revalidate } },
