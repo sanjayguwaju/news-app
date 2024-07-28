@@ -1,6 +1,10 @@
+"use client"
+
+import { Children, useEffect, useState } from "react";
 import ArticleWithHeaderNew from "../components/article-with-header";
 import FavouriteSection from "../components/favourite-section";
 import Navbar from "../components/navbar";
+import LexicalContent from "../components/LexicalContent";
 
 type ImageProps = { src: string; alt: string; className: string };
 
@@ -35,22 +39,21 @@ const ArticleWithHeader: React.FC<{
   </section>
 );
 
-const LargeSection: React.FC = () => (
+const LargeSection: React.FC = ({title, content, media}) => (
   <section className="flex flex-col w-[77%] max-md:ml-0 max-md:w-full">
-    <ArticleWithHeader text={articleData.text} subText={articleData.subText}>
+    <ArticleWithHeader text={title} subText={articleData.subText}>
       <Image
-        src={articleData.children.src}
+        src={media?.url}
         className="max-w-full aspect-[1.49] w-[1100px]"
         alt="News image"
       />
     </ArticleWithHeader>
     <p className="text-xl text-justify mt-4">
-      आइतबार सामाजिक सञ्जाल ट्विटरमार्फत् उनले गिरि एक दार्शनिक र समाजवादी
-      विचारक रहेको टिप्पणी गरेका छन्। ‘उहाँले राजनीतिक सीमाभन्दा पर रहेर सबै
-      विचारधाराका राजनीतिक दलहरुको सम्मान र आदर गर्नुभयो,’ उनले लेखेका छन्,
-      ‘उहाँको आत्मालाई भगवानले शान्ति प्रदान गरुन’ नेपाली कांग्रेसका नेता एवं
-      सांसद प्रदीप गिरिको निधनमा भारतको बिहारका मुख्यमन्त्री नीतिश कुमारले
-      श्रद्धाञ्जली व्यक्त गरेका छन्।
+      {content && <LexicalContent
+        childrenNodes={content}
+        locale="en-US"
+        lazyLoadImages={true}
+      />}
     </p>
   </section>
 );
@@ -81,7 +84,25 @@ const HeaderWithText: React.FC<{ text: string }> = ({ text }) => (
   </div>
 );
 
-const Single: React.FC = () => {
+const Single: React.FC = ({ params }) => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const BASE_URL = 'http://localhost:5000/api';
+        const response = await fetch(`${BASE_URL}/single-post/${params.slug}?locale=undefined&draft=false&depth=1`);
+        const result = await response.json();
+        console.log("result --->", result);
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="box-border flex relative flex-col shrink-0">
@@ -90,7 +111,7 @@ const Single: React.FC = () => {
           <Navbar />
           <section className="max-w-full w-[1130px]">
             <main className="flex gap-5 max-md:flex-col max-md:gap-0">
-              <LargeSection />
+            {data && <LargeSection title={data.title} content={data.content.root.children} media={data?.media}/>}
               <aside className="flex flex-col ml-5 w-[23%] max-md:ml-0 max-md:w-full">
                 <Sidebar />
                 <FavouriteSection />

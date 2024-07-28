@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { newsItems } from "./constants";
+import Link from "next/link";
 
 interface HeadingBlockProps {
   data: any;
@@ -10,14 +11,17 @@ interface HeadingBlockProps {
 
 const HeadingBlock: React.FC<HeadingBlockProps>  = ({ data }) => {
   console.log("data --->", data);
+  const baseUrl = 'http://localhost:5000/api/single-post';
   return (
     <section>
       {data.heroPosts.map((item: any, index: number) => (
         <div key={index} className="flex flex-col items-center">
           <div className="flex flex-col items-center mt-11 max-md:mt-10 max-md:max-w-full">
-            <h1 className="text-6xl font-semibold tracking-tighter text-center text-black leading-[96px] max-md:text-4xl">
-              {item.title}
-            </h1>
+            <Link href={`/${item.id}`}>
+                <h1 className="text-6xl font-semibold tracking-tighter text-center text-black leading-[96px] max-md:text-4xl">
+                  {item.title}
+                </h1>
+            </Link>
             <div className="flex gap-4 items-center text-xs leading-6 text-center text-black">
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/785f9178055e76137606eaeaf6c38134277919243331918c24b50cc5943249f0?apiKey=364294d949e44cc6a45273c421c40ca2&"

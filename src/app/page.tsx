@@ -1,23 +1,31 @@
 "use client"
 
-import Header from "./components/header";
-import Popular from "./components/popular";
-import Latest from "./components/latest";
-import Single from "./components/single";
-import EntertainmentBlock from "./components/entertainment-block";
-import PoliticsBlock from "./components/politics-block";
-import SocietyBlock from "./components/society-block";
-import { PhotoFeature } from "./components/photo-features";
 import HeadingBlock from "./components/heading-block";
-import Footer from "./components/footer";
 import { useEffect, useState } from "react";
-import { homepageData } from "./libs/constants/homepage";
+import { HOMEPAGE_LAYOUT_QUERY } from './libs/api/queries';
+import { fetchGraphQL } from "./libs/api/fetchGraphQL";
 
 export default function Home() {
   const [homepageLayout, setHomepageLayout] = useState<any>(null);
 
+  // useEffect(() => {
+  //   setHomepageLayout(homepageData.HomepageLayout.sections as any);
+  // }, []);
+
   useEffect(() => {
-    setHomepageLayout(homepageData.HomepageLayout.sections as any);
+    const fetchData = async () => {
+      try {
+        const data = await fetchGraphQL(HOMEPAGE_LAYOUT_QUERY);
+        console.log({data});
+        setHomepageLayout(data?.HomepageLayout?.sections);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        console.log("finallyyy");
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
