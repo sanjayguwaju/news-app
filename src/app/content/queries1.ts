@@ -58,5 +58,4 @@ export const fetchHomepageLayout = async () => {
   }
 };
 
-// Call the function to fetch the homepage layout
 fetchHomepageLayout();
