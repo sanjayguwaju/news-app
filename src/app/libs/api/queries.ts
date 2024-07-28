@@ -8,23 +8,113 @@ export const HOMEPAGE_LAYOUT_QUERY = `
         ... on HeroBlock {
           id
           blockType
-          heroPosts {
+          blockPosts {
             id
             author
+            title
+            publishDate
+            media {
+              url
+            }
+          }
+          blockName
+        }
+        ... on RecentBlock {
+          blockType
+          id
+          blockPosts {
+            id
+            author
+            publishDate
+            title
+            media {
+              url
+            }
+          }
+          blockName
+        }
+        ... on SportBlock {
+          blockType
+          blockName
+          id
+          blockPosts {
+            id
+            author
+            publishDate
             title
             media {
               url
             }
           }
         }
-        ... on RecentBlock {
+        ... on NationalBlock {
           blockType
+          blockName
           id
-          recentPosts {
+          blockPosts {
             id
             author
             publishDate
             title
+            media {
+              url
+            }
+          }
+        }
+        ... on PoliticsBlock {
+          blockType
+          blockName
+          id
+          blockPosts {
+            id
+            author
+            publishDate
+            title
+            media {
+              url
+            }
+          }
+        }
+        ... on SocialBlock {
+          blockType
+          blockName
+          id
+          blockPosts {
+            id
+            author
+            publishDate
+            title
+            media {
+              url
+            }
+          }
+        }
+        ... on TechnologyBlock {
+          blockType
+          blockName
+          id
+          blockPosts {
+            id
+            author
+            publishDate
+            title
+            media {
+              url
+            }
+          }
+        }
+        ... on EntertainmentBlock {
+          blockType
+          blockName
+          id
+          blockPosts {
+            id
+            author
+            publishDate
+            title
+            media {
+              url
+            }
           }
         }
       }

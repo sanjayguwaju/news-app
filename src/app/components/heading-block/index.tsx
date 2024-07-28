@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { newsItems } from "./constants";
 import Link from "next/link";
 
 interface HeadingBlockProps {
@@ -10,11 +9,9 @@ interface HeadingBlockProps {
 }
 
 const HeadingBlock: React.FC<HeadingBlockProps>  = ({ data }) => {
-  console.log("data --->", data);
-  const baseUrl = 'http://localhost:5000/api/single-post';
   return (
     <section>
-      {data.heroPosts.map((item: any, index: number) => (
+      {data?.blockPosts?.map((item: any, index: number) => (
         <div key={index} className="flex flex-col items-center">
           <div className="flex flex-col items-center mt-11 max-md:mt-10 max-md:max-w-full">
             <Link href={`/${item.id}`}>
