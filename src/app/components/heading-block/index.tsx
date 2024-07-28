@@ -53,13 +53,13 @@ const HeadingBlock: React.FC<HeadingBlockProps>  = ({ data }) => {
               </div>
             </div>
           </div>
-          <Image
-            src={item?.media?.url}
-            className="mt-5 max-w-full aspect-[1.49] w-[1100px]"
-            alt="News image"
-            height={200}
-            width={200}
-          />
+            <Image
+              src={item?.media?.url}
+              alt="News image"
+              width={1000}
+              height={1000}
+              className=" mt-8 rounded"
+            />
         </div>
       ))}
     </section>
