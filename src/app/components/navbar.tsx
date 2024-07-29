@@ -3,18 +3,15 @@ import { useState, useRef, useEffect } from 'react';
 import { FaHome, FaBars } from 'react-icons/fa';
 import MobileNav from './mobile-nav';
 import Dropdown from './dropdown';
-
-type ImageProps = { src: string; alt: string; className: string };
-
-const Image: React.FC<ImageProps> = ({ src, alt, className }) => (
-  <img loading="lazy" src={src} alt={alt} className={className} />
-);
+import Link from 'next/link';
 
 const NavigationBar: React.FC = () => (
   <div className="flex gap-0 justify-center pr-20 pl-10 max-w-full bg-red-600 w-[1130px] max-md:flex-wrap max-md:px-5">
-    <div className="shrink-0 border-r border-solid aspect-[1.14] border-blue-800 border-opacity-30 w-[52px] flex justify-center items-center">
+    <Link href={"/"}>
+    <div className="shrink-0 border-r mt-1 border-solid aspect-[1.14] border-blue-800 border-opacity-30 w-[52px] flex justify-center items-center hover:bg-red-800 hover:border-blue-600">
       <FaHome />
     </div>
+    </Link>
     <NavItem text="समाचार" />
     <NavItem text="समाज" />
     <Dropdown text="राजनीत" />

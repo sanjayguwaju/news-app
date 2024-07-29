@@ -7,6 +7,8 @@ import { fetchGraphQL } from "./libs/api/fetchGraphQL";
 import Recent from "./components/recent";
 import PoliticsBlock from "./components/politics-block";
 import EntertainmentBlock from "./components/entertainment-block";
+import Navbar from "./components/navbar";
+import ArticleWithHeaderNew from "./components/top-header-block";
 
 export default function Home() {
   const [homepageLayout, setHomepageLayout] = useState<any>(null);
@@ -33,6 +35,8 @@ export default function Home() {
 
   return (
     <>
+    <ArticleWithHeaderNew/>
+      <Navbar />
       {homepageLayout?.map((block: any, index: number) => {
         switch (block.blockType) {
           case "hero-block":

@@ -1,10 +1,11 @@
 "use client"
 
 import { Children, useEffect, useState } from "react";
-import ArticleWithHeaderNew from "../components/article-with-header";
+// import ArticleWithHeaderNew from "../components/article-with-header";
 import FavouriteSection from "../components/favourite-section";
 import Navbar from "../components/navbar";
 import LexicalContent from "../components/LexicalContent";
+import ArticleWithHeaderNew from "../components/top-header-block";
 
 type ImageProps = { src: string; alt: string; className: string };
 
