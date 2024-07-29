@@ -6,6 +6,7 @@ import { HOMEPAGE_LAYOUT_QUERY } from './libs/api/queries';
 import { fetchGraphQL } from "./libs/api/fetchGraphQL";
 import Recent from "./components/recent";
 import PoliticsBlock from "./components/politics-block";
+import EntertainmentBlock from "./components/entertainment-block";
 
 export default function Home() {
   const [homepageLayout, setHomepageLayout] = useState<any>(null);
@@ -42,8 +43,8 @@ export default function Home() {
             return <PoliticsBlock key={index} data={block} />;
           // case "technology-block":
           //   return <HeadingBlock key={index} data={block} />;
-          // case "entertainment-block":
-          //   return <HeadingBlock key={index} data={block} />;
+          case "entertainment-block":
+            return <EntertainmentBlock key={index} data={block} />;
           default:
             return null;
         }

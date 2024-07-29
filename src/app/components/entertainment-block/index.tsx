@@ -1,50 +1,11 @@
-import { HeadingBlockProps } from "@/app/libs/types/heading-block-types";
+import Image from "next/image";
 import React from "react";
 
-const newsData = [
-    {
-        imgSrc: "https://placehold.co/300x400",
-        imgAlt: "Main News",
-        description: "केटाहरू जिस्क्याउने १५ महिला पक्राउ",
-    },
-    {
-        imgSrc:
-            "https://res.cloudinary.com/dz3facqgc/image/upload/v1719322207/tqaltpcfdsdkk697jeij.png",
-        imgAlt: "News 1",
-        description:
-            "‘पूजारा साकी’ र ‘फर्की फर्की’ चलेपछि वर्ष भन्छिन्, ‘मेरो फिल्म चलेजसरी पुलकित छु’",
-    },
-    {
-        imgSrc:
-            "https://res.cloudinary.com/dz3facqgc/image/upload/v1719322351/rtbg2fnt9nehibjuarhx.jpg",
-        imgAlt: "News 2",
-        description: "‘बिग बस’ र ‘स्वर्ग’ चल्दै, अब आउँदैछ ‘बिग बस २’",
-    },
-    {
-        imgSrc:
-            "https://res.cloudinary.com/dz3facqgc/image/upload/v1719322452/eorforz28idaazh29xlq.gif",
-        imgAlt: "News 3",
-        description: "‘दार्जिलिङ’ र ‘दार्जिलिङ २’ चल्दै, अब आउँदैछ ‘दार्जिलिङ ३’",
-    },
-    {
-        imgSrc:
-            "https://res.cloudinary.com/dz3facqgc/image/upload/v1719322616/asjpx4sfyzcjunqxsbce.png",
-        imgAlt: "News 4",
-        description:
-            "‘बज्रगी भाईजस्तो’ र ‘कालो निर्माण’ चल्दै, अब आउँदैछ ‘बज्रगी भाईजस्तो २’",
-    },
-    {
-        imgSrc:
-            "https://res.cloudinary.com/dz3facqgc/image/upload/v1719322736/jsqclvbmi1lz42evdqas.jpg",
-        imgAlt: "News 5",
-        description: "‘बिराना’ र ‘बिराना २’ चल्दै, अब आउँदैछ ‘बिराना ३’",
-    },
-];
+interface EntertainmentBlockProps {
+    data: any;
+  }
 
-const EntertainmentBlock: React.FC<HeadingBlockProps> = ({ data }) => {
-    const mainNews = newsData[0];
-    const otherNews = newsData.slice(1);
-
+const EntertainmentBlock: React.FC<EntertainmentBlockProps> = ({ data }) => {
     return (
         <>
             <div className="max-w-full mx-auto p-4 lg:max-w-7xl">
@@ -53,39 +14,45 @@ const EntertainmentBlock: React.FC<HeadingBlockProps> = ({ data }) => {
                 </div>
                 <div className="flex flex-wrap gap-4">
                     <div className="flex-shrink-0 w-full md:w-1/3">
-                        <img
-                            src={mainNews?.imgSrc}
-                            alt={mainNews?.imgAlt}
+                        <Image
+                            src={data?.blockPosts[0].media.url}
+                            alt={data?.blockPosts[0].title}
                             className="w-full mb-2"
+                            width={300}
+                            height={200}
                         />
                         <p className="text-black text-center  text-2xl sm:text-base">
-                            {mainNews.description}
+                            {data?.blockPosts[0].title}
                         </p>
                     </div>
                     <div className="flex flex-col gap-6 w-[400px] md:w-[340px]">
-                        {otherNews.map((news, index) => (
+                        {data.blockPosts.map((news: any, index: number) => (
                             <div key={index} className="flex items-start space-x-2 w-full">
-                                <img
-                                    src={news?.imgSrc}
+                                <Image
+                                    src={news?.media.url}
                                     alt={news?.imgAlt}
                                     className="w-20 h-20 object-cover"
+                                    width={200}
+                                    height={200}
                                 />
                                 <p className="text-black text-justify my-2 text-xl sm:text-base">
-                                    {news?.description}
+                                    {news?.title}
                                 </p>
                             </div>
                         ))}
                     </div>
                     <div className="flex flex-col gap-4 w-[400px] md:w-[340px]">
-                        {otherNews.map((news, index) => (
+                        {data.blockPosts.map((news: any, index: number) => (
                             <div key={index} className="flex items-start space-x-2 w-full">
-                                <img
-                                    src={news?.imgSrc}
+                                <Image
+                                    src={news?.media?.url}
                                     alt={news?.imgAlt}
                                     className="w-20 h-20 object-cover"
+                                    width={300}
+                                    height={200}
                                 />
                                 <p className="text-black text-justify my-2 text-xl sm:text-base">
-                                    {news?.description}
+                                    {news?.title}
                                 </p>
                             </div>
                         ))}

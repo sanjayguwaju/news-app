@@ -119,6 +119,15 @@ const LexicalContent: React.FC<{
       )
     }
 
+    const headingClasses: { [key: string]: string } = {
+      h1: "text-4xl font-bold mb-4",
+      h2: "text-3xl font-semibold mb-3",
+      h3: "text-2xl font-medium mb-2",
+      h4: "text-xl font-medium mb-2",
+      h5: "text-lg font-medium mb-1",
+      h6: "text-base font-medium mb-1",
+    };
+
     const serializedChildren = node.children ? <LexicalContent key={ix} childrenNodes={node.children} locale={locale} lazyLoadImages={lazyLoadImages} /> : null
     switch (node.type) {
       case 'linebreak':
@@ -135,17 +144,24 @@ const LexicalContent: React.FC<{
         )
       case 'listitem':
         return (
-          <li key={ix} {...attributes}>
+          <li key={ix} {...attributes} className="mb-2 text-gray-600">
             {serializedChildren}
           </li>
-        )
+        );
       case 'heading':
         const HeadingTag = node.tag as keyof JSX.IntrinsicElements
+        const headingClass = headingClasses[HeadingTag] || "";
         return (
-          <HeadingTag key={ix} {...attributes}>
+          <HeadingTag key={ix} {...attributes} className={headingClass}>
             {serializedChildren}
           </HeadingTag>
         )
+      case 'paragraph':
+        return (
+          <p key={ix} {...attributes} className="pt-2 text-gray-700">
+            {serializedChildren}
+          </p>
+        );
       case 'quote':
         return (
           <blockquote key={ix} {...attributes}>
@@ -165,7 +181,7 @@ const LexicalContent: React.FC<{
             loading={lazyLoadImages ? 'lazy' : 'eager'}
             fetchPriority={lazyLoadImages ? 'low' : 'high'}
             sizes="(max-width: 768px) 65ch, 100vw"
-            className="max-w-[calc(100%+40px)] translate-x-[-20px]"
+            className="(max-width: 768px) 65ch, 100vw"
             alt={upload?.alt || upload.filename}
           />
         )
