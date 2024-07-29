@@ -40,10 +40,10 @@ export default function Home() {
             return <Recent key={index} />;
           case "politics-block":
             return <PoliticsBlock key={index} data={block} />;
-          case "technology-block":
-            return <HeadingBlock key={index} data={block} />;
-          case "entertainment-block":
-            return <HeadingBlock key={index} data={block} />;
+          // case "technology-block":
+          //   return <HeadingBlock key={index} data={block} />;
+          // case "entertainment-block":
+          //   return <HeadingBlock key={index} data={block} />;
           default:
             return null;
         }
