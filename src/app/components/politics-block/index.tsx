@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface PolitcsBlockProps {
@@ -16,15 +18,19 @@ const PoliticsBlock:React.FC<PolitcsBlockProps> = ({ data }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
           {data.blockPosts.map((news, index) => (
             <div key={index} className="overflow-hidden">
-              <img
+              <Image
                 src={news?.media?.url}
                 alt={news.title}
                 className="w-full h-48 object-cover"
+                width={300}
+                height={200}
               />
               <div className="p-4 bg-white">
-                <p className="text-black text-center  text-2xl sm:text-base">
+              <Link href={`/${news.id}`}>
+                <p className="text-black text-center font-bold text-2xl sm:text-base">
                   {news.title}
                 </p>
+              </Link>
               </div>
             </div>
           ))}
