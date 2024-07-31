@@ -121,3 +121,21 @@ export const HOMEPAGE_LAYOUT_QUERY = `
     }
   }
 `;
+
+
+export const SINGLE_POSTS_QUERY = `
+  query Query {
+    SinglePosts {
+      docs {
+        categories {
+          title
+        }
+        title
+        media {
+          url
+        }
+        id
+      }
+    }
+  }
+`
