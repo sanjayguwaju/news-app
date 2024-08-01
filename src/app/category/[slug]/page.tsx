@@ -91,18 +91,17 @@ const CategoryList: React.FC = () => {
         fetchData();
     }, []);
 
-    console.log("single posts data --->", singePosts)
-
     return (
         <>
             <div className="flex justify-center">
                 <div className="max-w-full text-xs w-[1130px]">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {singePosts?.map((category) => (
+                        {singePosts?.map((category: any) => (
                             <Card
                                 key={category.id}
                                 image={category.media.url}
                                 title={category.title}
+                                postId={category.id}
                             />
                         ))}
                     </div>
