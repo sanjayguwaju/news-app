@@ -8,8 +8,7 @@ interface PolitcsBlockProps {
 
 const PoliticsBlock:React.FC<PolitcsBlockProps> = ({ data }) => {
   return (
-    <section className="flex justify-center items-center w-full sm:px-6 md:px-8 lg:px-16">
-      <div className="flex flex-col w-full max-w-7xl p-4">
+      <div className="flex flex-col w-full max-w-7xl py-4">
         <div className="bg-red-600 text-white px-4 py-2">
           <h2 className="font-bold text-2xl sm:text-xl">राजनीति</h2>
         </div>
@@ -34,7 +33,6 @@ const PoliticsBlock:React.FC<PolitcsBlockProps> = ({ data }) => {
           ))}
         </div>
       </div>
-    </section>
   );
 };
 

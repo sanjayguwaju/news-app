@@ -13,11 +13,9 @@ const HeadingBlock: React.FC<HeadingBlockProps> = ({ data }) => {
     <section>
       {data?.blockPosts?.map((item: any, index: number) => {
         const formattedDate = moment(item?.publishDate).tz('Asia/Kathmandu').format('YYYY-MM-DD HH:mm:ss');
-        console.log("formatedDate --->", item);
-
         return (
           <div key={index} className="flex flex-col items-center">
-            <div className="flex flex-col items-center mt-11 max-md:mt-10 max-md:max-w-full">
+            <div className="flex flex-col items-center mt-11 max-md:mt-10 max-md:max-w-full lg:max-w-4xl lg:mx-auto">
               <Link href={`/${item.id}`}>
                 <h1 className="text-6xl font-semibold tracking-tighter text-center text-black leading-[96px] max-md:text-4xl">
                   {item.title}

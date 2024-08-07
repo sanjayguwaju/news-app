@@ -8,7 +8,7 @@ interface EntertainmentBlockProps {
 const EntertainmentBlock: React.FC<EntertainmentBlockProps> = ({ data }) => {
     return (
         <>
-            <div className="max-w-full mx-auto p-4 lg:max-w-7xl">
+            <div className="max-w-full py-4 lg:max-w-7xl">
                 <div className="bg-red-600 text-white p-2 mb-4">
                     <h2 className="font-bold text-2xl sm:text-xl">मनोरञ्जन</h2>
                 </div>
