@@ -6,11 +6,11 @@ const ArticleWithHeaderOne: React.FC<{
   subText: string;
   children: React.ReactNode;
 }> = ({ text, subText, children }) => (
-  <article className="flex flex-col self-start mt-5">
+  <article className="flex flex-col mt-5">
     {children}
-    <div className="flex gap-3 mt-1.5">
-      <span>{text}</span>
-      <span>{subText}</span>
+    <div className="flex items-center justify-center gap-3 my-1.5">
+      <span className="text-xs text-gray-400">{text}</span>
+      <span className="text-xs">{subText}</span>
     </div>
   </article>
 );
