@@ -91,7 +91,7 @@ const Single: React.FC = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const BASE_URL = 'http://localhost:5000/api';
+        const BASE_URL = 'http://localhost:5555/api';
         const response = await fetch(`${BASE_URL}/single-post/${params.slug}?locale=undefined&draft=false&depth=1`);
         const result = await response.json();
         console.log("result --->", result);
