@@ -4,7 +4,18 @@ import Recent from '../recent';
 import PoliticsBlock from '../politics-block';
 import EntertainmentBlock from '../entertainment-block';
 
-const blockComponents = {
+interface BlockRendererProps {
+  block: {
+    blockType: string;
+  };
+  index: number;
+}
+
+interface BlockComponents {
+  [key: string]: React.FC<any>;
+}
+
+const blockComponents: BlockComponents = {
   'hero-block': HeadingBlock,
   'recent-block': Recent,
   'politics-block': PoliticsBlock,
@@ -12,7 +23,7 @@ const blockComponents = {
   // Add other block types here
 };
 
-const BlockRenderer = ({ block, index }) => {
+const BlockRenderer: React.FC<BlockRendererProps> = ({ block, index }) => {
   const BlockComponent = blockComponents[block.blockType];
   return BlockComponent ? <BlockComponent key={index} data={block} /> : null;
 };

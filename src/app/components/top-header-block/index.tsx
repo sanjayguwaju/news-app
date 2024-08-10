@@ -6,7 +6,7 @@ const ArticleWithHeaderOne: React.FC<{
   subText: string;
   children: React.ReactNode;
 }> = ({ text, subText, children }) => (
-  <article className="flex flex-col mt-5">
+  <article className="flex flex-col mt-5 lg:mr-72">
     {children}
     <div className="flex items-center justify-center gap-3 my-1.5">
       <span className="text-xs text-gray-400">{text}</span>
@@ -18,7 +18,8 @@ const ArticleWithHeaderOne: React.FC<{
 const ArticleWithHeaderNew = () => {
   return (
     <>
-        <div className="flex items-center justify-center bg-blue-600">
+    <div className="md:max-w-6xl flex justify-center items-center mx-auto">
+    <div className="flex items-center justify-between">
             <ArticleWithHeaderOne
               text="३ आषाढ २०८१, सोमवार"
               subText="सत्य समाचार सत्य विचार"
@@ -39,6 +40,7 @@ const ArticleWithHeaderNew = () => {
               height={400}
             />
         </div>
+    </div>
     </>
   );
 };

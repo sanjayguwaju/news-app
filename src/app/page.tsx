@@ -31,7 +31,7 @@ export default function Home() {
     <ArticleWithHeaderNew/>
       <Navbar />
       <div className=" bg-blue-400 max-w-6xl mx-auto">
-        {homepageLayout?.map((block, index) => (
+        {homepageLayout?.map((block: any, index: number) => (
           <BlockRenderer key={index} block={block} index={index} />
         ))}
       </div>
